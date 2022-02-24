@@ -1,6 +1,6 @@
 import { Button, Form, Input, message, Upload } from 'antd';
 import Icon from '@ant-design/icons/lib/components/Icon';
-import { signup } from "../src/api/user";
+import { signup } from '../src/api/user';
 
 export default function SignUp() {
   const onChange = (info) => {
@@ -45,26 +45,26 @@ export default function SignUp() {
             },
           ]}
         >
-          <Input/>
+          <Input />
         </Form.Item>
         <Form.Item
           label="Password"
           name="password"
           rules={[{ required: true, message: '비밀번호를 입력해주세요' }]}
         >
-          <Input.Password/>
+          <Input.Password />
         </Form.Item>
         <Form.Item
           label="Name"
           name="name"
           rules={[{ required: true, message: '이름을 입력해주세요' }]}
         >
-          <Input/>
+          <Input />
         </Form.Item>
         <Form.Item name="avatar">
           <Upload {...uploadProps}>
             <Button>
-              <Icon type="upload"/>
+              <Icon type="upload" />
               Click to upload
             </Button>
           </Upload>
