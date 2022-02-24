@@ -1,8 +1,8 @@
 // 액션 타입
 import { call, put, takeLatest } from 'redux-saga/effects';
-import { createAction, handleActions } from "redux-actions";
-import { finishLoading, startLoading } from "./loading";
-import { logout, login } from "../api/user";
+import { createAction, handleActions } from 'redux-actions';
+import { finishLoading, startLoading } from './loading';
+import { logout, login } from '../api/user';
 
 const LOGIN_USER = 'user/LOGIN_USER';
 const LOGIN_USER_SUCCESS = 'user/LOGIN_USER_SUCCESS';
@@ -12,8 +12,11 @@ const LOGOUT_USER = 'user/LOGOUT_USER';
 const LOGOUT_USER_SUCCESS = 'user/LOGOUT_USER_SUCCESS';
 const LOGOUT_USER_FAILURE = 'user/LOGOUT_USER_FAILURE';
 
-export const loginUser = createAction(LOGIN_USER, requestInfo => requestInfo);
-export const logoutUser = createAction(LOGOUT_USER, requestInfo => requestInfo);
+export const loginUser = createAction(LOGIN_USER, (requestInfo) => requestInfo);
+export const logoutUser = createAction(
+  LOGOUT_USER,
+  (requestInfo) => requestInfo,
+);
 
 function* logoutUserSaga() {
   yield put(startLoading(LOGOUT_USER));
@@ -64,15 +67,18 @@ const initialState = {
   user: null,
 };
 
-const user = handleActions({
-  [LOGIN_USER_SUCCESS]: (state, action) => ({
-    ...state,
-    user: action.payload,
-  }),
-  [LOGOUT_USER_SUCCESS]: (state, action) => ({
-    ...state,
-    user: null,
-  }),
-}, initialState);
+const user = handleActions(
+  {
+    [LOGIN_USER_SUCCESS]: (state, action) => ({
+      ...state,
+      user: action.payload,
+    }),
+    [LOGOUT_USER_SUCCESS]: (state, action) => ({
+      ...state,
+      user: null,
+    }),
+  },
+  initialState,
+);
 
 export default user;

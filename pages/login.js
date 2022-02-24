@@ -1,7 +1,7 @@
 import { Button, Form, Input } from 'antd';
 import { useRouter } from 'next/router';
-import { useDispatch } from "react-redux";
-import { loginUser } from "../src/modules/user";
+import { useDispatch } from 'react-redux';
+import { loginUser } from '../src/modules/user';
 
 export default function Login() {
   const router = useRouter();
@@ -33,7 +33,7 @@ export default function Login() {
             },
           ]}
         >
-          <Input/>
+          <Input />
         </Form.Item>
         <Form.Item
           label="Password"
@@ -45,7 +45,7 @@ export default function Login() {
             },
           ]}
         >
-          <Input.Password/>
+          <Input.Password />
         </Form.Item>
         <Button htmlType="submit" type="primary">
           제출

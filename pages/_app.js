@@ -1,10 +1,10 @@
 import Layout from '../src/components/Layout';
 import '../styles/globals.css';
 import wrapper from '../src/modules/store';
-import { PersistGate } from "redux-persist/integration/react";
-import { persistStore } from "redux-persist";
-import persistReducer from "../src/modules";
-import { createStore } from "redux";
+import { PersistGate } from 'redux-persist/integration/react';
+import { persistStore } from 'redux-persist';
+import persistReducer from '../src/modules';
+import { createStore } from 'redux';
 
 function MyApp({ Component, pageProps }) {
   const store = createStore(persistReducer);

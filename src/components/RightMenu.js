@@ -1,13 +1,13 @@
 import { Menu } from 'antd';
 import Link from 'next/link';
-import { useDispatch, useSelector } from "react-redux";
-import { logoutUser } from "../modules/user";
+import { useDispatch, useSelector } from 'react-redux';
+import { logoutUser } from '../modules/user';
 
 export default function RightMenu() {
-  const { user } = useSelector(state => state.user);
-  const dispatch = useDispatch()
+  const { user } = useSelector((state) => state.user);
+  const dispatch = useDispatch();
 
-  const onLogout = () => dispatch(logoutUser())
+  const onLogout = () => dispatch(logoutUser());
 
   return (
     <Menu mode="horizontal">
